@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Whispers</title>
+</head>
+
+<body>
+
+    <header>
+        <svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img"
+            aria-label="Whispers logo">
+            <title>Whispers</title>
+            <!-- layered text: thicker behind, thinner on top for subtle calligraphic feel -->
+            <text x="8" y="75" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="72" fill="#000"
+                opacity="0.18">whispers</text>
+            <text x="12" y="72" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="68"
+                fill="#000">whispers</text>
+        </svg>
+        <button id="header">Home</button>
+        <button id="header">Info</button>
+    </header>
+
+    <div class="header">
+        <h1>Untold confessions!</h1>
+        <p>Read what others feel, and say what you can't say aloud<b><br> ANONYMOUSLY!!</p>
+    </div>
+
+    <button id="openPopup" class="floating-btn">+</button>
+
+    <main id="feed" class="feed"></main>
+
+    <div id="postPopup" class="popup">
+        <div class="popup-content">
+            <h2>Write your confession</h2>
+            <input type="text" id="nameInput" placeholder="Enter your name (or Anonymous)">
+            <textarea id="contentInput" placeholder="Write your thoughts here..."></textarea>
+            <div class="popup-actions">
+                <button id="closePopup">Cancel</button>
+                <button id="postBtn">Post</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

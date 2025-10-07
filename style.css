@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+        width: 100%;
+        font-family: "Poppins", sans-serif;
+            background: #fafafa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    background-color: whitesmoke;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    height: 80px;
+}
+
+#header {
+    background-color: whitesmoke;
+    border: none;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin: 100px;
+}
+
+@media (max-width: 600px) {
+
+    #header {
+        font-size: 16px;
+        margin: 0px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    svg {
+        margin-left: 10px;
+    }
+
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.header p {
+    color: #666;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+
+.post {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.post::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 4px;
+    background: linear-gradient(45deg, #ff4d6d, #ff7f50, #9370db, #20b2aa, #ffa500);
+    background-size: 300% 300%;
+    animation: borderFlow 6s linear infinite;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: 0;
+}
+
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.post p,
+.post small,
+.author {
+    position: relative;
+    z-index: 1;
+}
+
+.post p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.post .author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+    margin-top: 8px;
+}
+
+.post small {
+    display: block;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #111;
+    color: #fff;
+    font-size: 2rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+}
+
+.floating-btn:hover {
+    background: #333;
+}
+
+
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .popup {
+    height: fit-content;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px black dashed;
+    border-radius: 10px;
+    }
+}
+
+.popup-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.popup-content input,
+.popup-content textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    resize: none;
+}
+
+textarea {
+    height: 120px;
+}
+
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.popup-actions button {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#closePopup {
+    background: #eee;
+}
+
+#postBtn {
+    background: #111;
+    color: white;
+}
