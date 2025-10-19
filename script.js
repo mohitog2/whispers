@@ -35,7 +35,7 @@ postBtn.onclick = () => {
     id: Date.now(), // unique ID
     name,
     content,
-    time: getFormattedTime(),
+    
   };
 
   // Send post via JSONP
@@ -79,3 +79,4 @@ function loadPosts() {
 
 // Initial load
 loadPosts();
+
